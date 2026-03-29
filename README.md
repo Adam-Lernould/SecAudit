@@ -1,4 +1,4 @@
-# SecAudit: Linux Security Audit Script 🛡️
+# SecAudit: Linux Security Audit Script
 
 ## Description
 SecAudit is a lightweight and automated Bash script designed to analyze the security configurations of essential Linux services. It quickly identifies common misconfigurations, high-risk vulnerabilities, and permissive access rights, then generates a clear and readable report.
