@@ -16,3 +16,14 @@ Currently, SecAudit checks the following services if they are active on the syst
    ```bash
    git clone [https://github.com/Adam-Lernould/SecAudit.git](https://github.com/Adam-Lernould/SecAudit.git)
    cd SecAudit
+   ```
+
+2. **Make it executable if it's not already**
+  ```bash
+  chmod +x SecAudit.sh
+  ```
+
+3. **Run it !**
+  ```bash
+  sudo ./SecAudit.sh
+  ```

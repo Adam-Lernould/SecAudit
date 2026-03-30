@@ -111,11 +111,15 @@ generate_report() {
   done
 }
 
+check_root() {
+  if [ "$EUID" -ne 0 ]; then
+    echo "Please run as root !"
+    exit 1
+  fi
+}
+
 # Main 
-if [ "$EUID" -ne  0 ]; then
-  echo "Please run as root !"
-  exit 1
-else
+  check_root
   echo -e "\n"
   echo -e "Checking for used services...\n"
   sleep 1
@@ -128,4 +132,3 @@ else
   echo -e "Generating the report...\n"
   generate_report
   sleep 1
-fi
