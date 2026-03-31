@@ -36,7 +36,7 @@ check_ssh() {
     echo -e "$desc in sshd_config\n" >> ssh_vuln.txt
     fi
   done
-} 
+}
 
 #Check for apache2 vulnerabilites
 check_apache2() {
@@ -118,8 +118,16 @@ check_root() {
   fi
 }
 
-# Main 
-  check_root
+check_choice() {
+  echo -e "============================="
+  echo -e "1. Specific service analysis"
+  echo -e "2. Global analysis"
+  echo -e "3. Exit"
+  echo -e "=============================\n"
+  read -p "What type of analysis do you want ? " choice
+}
+
+Global_analysis() {
   echo -e "\n"
   echo -e "Checking for used services...\n"
   sleep 1
@@ -132,3 +140,23 @@ check_root() {
   echo -e "Generating the report...\n"
   generate_report
   sleep 1
+}
+
+Specific_analysis() {
+  echo -e "Pas encore"
+}
+
+main() {
+  check_root
+  check_choice
+  if [ "$choice" -eq 1 ]; then
+    Specific_analysis
+  elif [ "$choice" -eq 2 ]; then
+    Global_analysis
+  elif [ "$choice" -eq 3 ]; then
+    echo -e "Exiting..."
+    exit 0
+  fi
+}
+
+main"$@"
